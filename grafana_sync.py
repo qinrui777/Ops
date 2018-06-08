@@ -10,7 +10,7 @@ import requests
 import re
 
 requests.packages.urllib3.disable_warnings()
-header = {'Authorization':'Basic YWRtaW46SDM1LmpRPGtQQTV2fU5+dw=='}
+header = {'Authorization':'Basic YWRtaWde4DM1LdwedwePGtQQTV2fU5+dw=='}
 
 userList = []
 orgList = []
@@ -19,8 +19,8 @@ orgList = []
 def getLdapInfo():
 
     try:
-        l = ldap.open("172.20.1.167",389)
-        l.simple_bind_s("CN=azure_s_itisrvacc,OU=User,OU=DevOps,OU=Project,DC=cn133,DC=azure,DC=net","""00$,d%,iieH""")
+        l = ldap.open("172.20.xx.xx7",389)
+        l.simple_bind_s("CN=azure_s_itisrvacc,OU=User,OU=DevOps,OU=Project,DC=cn133,DC=azure,DC=net","""xx%,iieH""")
     except ldap.LDAPError,e:
         print "error when open ldap"
         print e
