@@ -1,0 +1,6 @@
+cp /etc/sysconfig/xxx /etc/sysconfig/xxx.`date -I`
+
+
+示例：
+#date -I
+2018-06-28
