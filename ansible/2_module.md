@@ -1,5 +1,5 @@
 ### 简介
-模块(也被称为 “task plugins” 或 “library plugins”)是在 Ansible 中实际在执行的.它们就 是在每个 playbook 任务中被执行的.你也可以仅仅通过 ‘ansible’ 命令来运行它们.
+模块(也被称为 “task plugins” 或 “library plugins”)是在 Ansible 中实际在执行的.它们就 是在每个 playbook 任务中被执行的.你也可以仅仅通过 ‘ansible’ 命令来运行它们.  
 
 ### 常用模块
 - ping
@@ -30,6 +30,8 @@
 ```
 
 ### 所有模块
+
+官方文档：https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 
 root@node1:/home/vagrant/ansible_demo# ansible-doc -l
 acl                  Sets and retrieves file ACL information.
