@@ -5,12 +5,19 @@
 注解：YAML和JSON类似，是一种表示数据的格式。
 
 
-### playbook 基本要素
+### playbook 基本要素/语法
 
  - hosts：为主机的IP，或者主机组名，或者关键字all
  - remote_user: 以哪个用户身份执行。
  - vars： 变量
  - tasks: playbook的核心，定义顺序执行的动作action。每个action调用一个ansbile module。
+ 
+playbook常用到的YMAL格式：
+　　1、文件的第一行应该以 "---" (三个连字符)开始，表明YMAL文件的开始。
+　　2、在同一行中，#之后的内容表示注释，类似于shell，python和ruby。
+　　3、YMAL中的列表元素以”-”开头然后紧跟着一个空格，后面为元素内容。
+　　4、同一个列表中的元素应该保持相同的缩进。否则会被当做错误处理。
+　　5、play中hosts，variables，roles，tasks等对象的表示方法都是键值中间以":"分隔表示，":"后面还要增加一个空格。
 
 
 ### playbook脚本使用Module  
