@@ -8,6 +8,7 @@
 - service
 - yum 
 - apt
+- shell
 
 ### 参数
 
@@ -74,3 +75,4 @@ campfire             Send a message to Campfire
 示例：
 ansible node2 -m apt -a "name=lrzsz state=latest"
 ansible node2 -m apt -a "name=lrzsz state=absent"
+ansible web -m shell -a 'cat /etc/passwd |grep "keer"'
