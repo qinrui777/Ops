@@ -69,10 +69,9 @@ campfire             Send a message to Campfire
 
   `-s, --snippet         Show playbook snippet for specified module(s)`
 
-```
-
 
 示例：
+```
 ansible node2 -m ping
 ansible node2 -m copy -a "src=/home/vagrant/ansible_demo/node1_file dest=/tmp/node1_file
 ansible node2 -m command -a 'chdir=/opt/ pwd'
@@ -80,3 +79,4 @@ ansible node2 -m command -a 'hostname'
 ansible node2 -m apt -a "name=lrzsz state=latest"
 ansible node2 -m apt -a "name=lrzsz state=absent"
 ansible web -m shell -a 'cat /etc/passwd |grep "keer"'
+```
