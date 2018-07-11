@@ -62,7 +62,11 @@ bzr                  Deploy software (or files) from bzr branches
 campfire             Send a message to Campfire
 
 ### 查看模块的具体使用
-ansible-doc <apt>
+`ansible-doc changeme` 或者  `ansible-doc -s changeme`
+
+`ansible-doc --help`
+
+  `-s, --snippet         Show playbook snippet for specified module(s)`
 
 ```
 
