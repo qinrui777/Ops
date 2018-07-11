@@ -39,7 +39,7 @@
 ### 所有模块
 
 官方文档：https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
-
+```
 root@node1:/home/vagrant/ansible_demo# ansible-doc -l
 acl                  Sets and retrieves file ACL information.
 add_host             add a host (and alternatively a group) to the ansible-playbo
@@ -61,6 +61,7 @@ bigip_pool_member    Manages F5 BIG-IP LTM pool members
 boundary_meter       Manage boundary meters
 bzr                  Deploy software (or files) from bzr branches
 campfire             Send a message to Campfire
+```
 
 ### 查看模块的具体使用
 `ansible-doc changeme` 或者  `ansible-doc -s changeme`
