@@ -13,11 +13,11 @@
  - tasks: playbook的核心，定义顺序执行的动作action。每个action调用一个ansbile module。
  
 playbook常用到的YMAL格式：
-　　1、文件的第一行应该以 "---" (三个连字符)开始，表明YMAL文件的开始。
-　　2、在同一行中，#之后的内容表示注释，类似于shell，python和ruby。
-　　3、YMAL中的列表元素以”-”开头然后紧跟着一个空格，后面为元素内容。
-　　4、同一个列表中的元素应该保持相同的缩进。否则会被当做错误处理。
-　　5、play中hosts，variables，roles，tasks等对象的表示方法都是键值中间以":"分隔表示，":"后面还要增加一个空格。
+　　1、文件的第一行应该以 "---" (三个连字符)开始，表明YMAL文件的开始。  
+　　2、在同一行中，#之后的内容表示注释，类似于shell，python和ruby。  
+　　3、YMAL中的列表元素以”-”开头然后紧跟着一个空格，后面为元素内容。  
+　　4、同一个列表中的元素应该保持相同的缩进。否则会被当做错误处理。  
+　　5、play中hosts，variables，roles，tasks等对象的表示方法都是键值中间以":"分隔表示，":"后面还要增加一个空格。  
 
 
 ### playbook脚本使用Module  
@@ -44,7 +44,7 @@ playbook常用到的YMAL格式：
   tasks:
   - name: install lrzsz
     apt: name=lrzsz state=latest
-   
+    
    
 # ansible-playbook  playbook1.yml
 
@@ -60,4 +60,61 @@ PLAY RECAP ********************************************************************
 192.168.59.2               : ok=2    changed=1    unreachable=0    failed=0
 ```
 
+
+
+```
+root@node1:/home/vagrant/ansible_demo/pb# cat vars.yml
+---
+- name: get vars
+  hosts: node2
+  user: root
+  tasks:
+  - name: get vars ipv4 ON methed 1
+    shell: echo {{ ansible_eth1["ipv4"]["address"] }}
+  - name: get vars ipv4 ON methed 2
+    command: echo {{ ansible_eth1.ipv4.address }} >>/tmp/ip_method2
+```
+
+
+```
+root@node1:/home/vagrant/ansible_demo/pb# cat when.yml
+---
+- name : test args when
+  hosts: node2
+  user: root
+  tasks:
+    - name: mkdir /tmp/debianDir when Debian
+      command: mkdir - /tmp/debianDir
+      when: ansible_os_family =="Debian"
+
+    - name: mkdir /tmp/debianDir when centos
+      command: mkdir -p /tmp/centosDir
+      when: ansible_os_family =="CentOS"
+```
+
+
+### handlers
+```
+root@node1:/home/vagrant/ansible_demo/pb# cat install_apache.yml
+---
+- name: install apache
+  hosts: node2
+  remote_user: root
+  tasks:
+  - name: install apache on CentOS
+    yum: name=httpd state=present
+    when: ansible_os_family=="CentOS"
+  - name: install apache on Debian
+    apt: name=apache2 state=present
+    when: ansible_os_family=="Debian"
+    notify:
+    - stop apache2
+
+  handlers:
+  - name: stop apache2
+    service: name=apache2 state=stopped
+ ```
+ 
+ >  安装apache2后，会默认启动服务，所以此处 安装后触发停止apache2的服务的过程
+ 
 > 提供json和yml互转的在线网站： http://www.json2yaml.com/
