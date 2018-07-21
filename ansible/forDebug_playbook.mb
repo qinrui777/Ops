@@ -1,0 +1,34 @@
+debug你的playbook
+
+
+检查语法： 
+`ansible-playbook --syntax-check playbook.yml `
+
+
+查看host列表： 
+`ansible-playbook --list-hosts playbook.yml`
+
+
+查看task列表： 
+`ansible-playbook --list-tasks playbook.yml`
+
+
+检查模式(不会运行):  
+`ansible-playbook --check playbook.yml`
+
+diff模式(查看文件变化)：  
+`ansible-playbook --check --diff playbook.yml`
+
+从指定的task开始运行： 
+
+`ansible-playbook --start-at-task="install packages" playbook.yml`
+
+ 
+逐个task运行，运行前需要你确认：  
+`ansible-playbook --step playbook.yml`
+
+指定tags： 
+`ansible-playbook --tags=foo,bar playbook.yml`
+
+跳过tags： 
+`ansible-playbook --skip-tags=baz,quux playbook.yml`
