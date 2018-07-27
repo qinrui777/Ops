@@ -51,6 +51,12 @@ docker inspect --format='{{.State.Pid}}{{.Name}}' `docker ps -a -q`
 对应个格式为 一级属性{{.属性}} 二级属性 {{.属性.属性}} 三级属性 {{.属性.属性.属性}}
 
 
+### docker system
+
+ `docker system df`
+
 ###  Docker 增强模板及函数
 
-参考：https://yq.aliyun.com/articles/230067
+参考：
+https://yq.aliyun.com/articles/230067
+https://yq.aliyun.com/articles/272173
