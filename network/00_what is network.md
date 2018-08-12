@@ -24,4 +24,4 @@ VPN(virtual private network)
 - https://blog.csdn.net/yangbodong22011/article/details/72457214
 
 
-- [如何形象地理解冲突域和广播域？]（https://www.zhihu.com/question/27723724）
+- [如何形象地理解冲突域和广播域?](https://www.zhihu.com/question/27723724）
