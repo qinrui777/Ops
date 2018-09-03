@@ -18,8 +18,8 @@ body = "dear, all ....."
 
 msg.attach(MIMEText(body,'plain'))
 
-filename = "ADCC_script_20180706.xlsx"
-attachment = open("/Users/ruqin/Desktop/ADCC_script_20180706.xlsx","rb")
+filename = "script_20180706.xlsx"
+attachment = open("/Users/ruqin/Desktop/script_20180706.xlsx","rb")
 
 part = MIMEBase('application', 'octet-stream')
 part.set_payload((attachment).read())
@@ -30,7 +30,7 @@ msg.attach(part)
 
 server=smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login("qinrui.cool@gmail.com","Persist@1993")
+server.login("qinrui.cool@gmail.com","<password>")
 text = msg.as_string()
 server.sendmail(fromaddr,toaddr,text)
 server.quit()
