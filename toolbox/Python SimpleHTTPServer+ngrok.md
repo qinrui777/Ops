@@ -1,6 +1,5 @@
 # 利用  python SimpleHTTPServer 组合 ngrok下载本地文件到服务器上
 
-
 step 1 :开启 http 
 python -m SimpleHTTPServer 7777
 
@@ -8,7 +7,7 @@ step 2: 开启ngrok
 
 `cd /Users/ruqin/Downloads && ./ngrok http 7777`
 
-可得到如下域名：
+可得到如下域名(那个数字和字母的组合是随机的)：
 http://f66f25a0.ngrok.io
 
 
@@ -17,11 +16,10 @@ http://f66f25a0.ngrok.io
 
 
 ---
+
 ## SimpleHTTPServer
 
-
 SimpleHTTPServer是Python 2自带的一个模块，是Python的Web服务器。它在Python 3已经合并到http.server模块中。
-
 
 ###  使用
 
@@ -38,7 +36,7 @@ SimpleHTTPServer是Python 2自带的一个模块，是Python的Web服务器。�
 ngrok 内网穿透利器
 
 ###  下载
-去[官网](https://ngrok.com/download)下载
+去 ngrok [官网](https://ngrok.com/download)下载
 
 
 ### 使用
