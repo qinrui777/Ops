@@ -19,8 +19,7 @@ def select():
     records = cursor.fetchall()
     pprint.pprint(records)
 
-def sendMail():
-
+#def sendMail():
 
 if __name__ == "__main__":
 
