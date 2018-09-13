@@ -41,5 +41,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> import sys
  ```
 
+
+[python script](https://github.com/qinrui777/Ops/blob/master/python_learning/python_postgresV2.py)
 Ref：
 - https://wiki.postgresql.org/wiki/Using_psycopg2_with_PostgreSQL
