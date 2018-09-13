@@ -7,11 +7,14 @@ import sys
 ###类型
 #print type(sys.argv)
 ##长度
-#print len(sys.argv)
+print  "len is :"
+print len(sys.argv)
 ##第一个参数
-#print sys.argv[0]
+print sys.argv[0]
 ##第二个参数
-#print sys.argv[1]
+print sys.argv[1]
+print sys.argv[2]
+
 
 def get_name():
     print "print name..."

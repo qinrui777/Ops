@@ -17,13 +17,23 @@ def get_age():
 
 if __name__== "__main__":
 
+    
     if sys.argv[1].startswith('--'):
         option = sys.argv[1][2:]
         if option == 'version':
             print Version
         elif option == 'help':
-            print '''  \t    aws get_ec2
+            print '''Get aws resource command in python script.
+
+Usage:
+
+	./get_aws_resource.py <command>
+
+The commands are:
+  \t    aws get_ec2
             aws get_subnet
+
+Additional help topics:
             --version : Prints the version number
             --help     : Display this help'''
         else:
