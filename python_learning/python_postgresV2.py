@@ -8,7 +8,7 @@ from datetime import datetime
 
 #http://www.cnblogs.com/chen0427/p/5755094.html
 
-def get_data():
+def get_data(sql):
 
     conn_string = "host='localhost' dbname='db1' user='postgres' password='123456'"
     print "Connecting to database\n -> %s" % (conn_string)
@@ -16,7 +16,7 @@ def get_data():
     global cursor
     cursor = conn.cursor()
     print "Connected! \n"
-    sql = "SELECT * FROM users"
+    #sql = "SELECT * FROM users"
     cursor.execute(sql)
     
     records = cursor.fetchall()
@@ -24,7 +24,8 @@ def get_data():
 
 def write_data_to_excel():
     print "============ hanshu2"
-    result = get_data()
+    sql1 = "SELECT * FROM users"
+    result = get_data(sql1)
     wbk = xlwt.Workbook()
     sheet = wbk.add_sheet('Sheet1',cell_overwrite_ok=True)
     today = datetime.today()
@@ -33,7 +34,7 @@ def write_data_to_excel():
     for i in xrange(len(result)):
         for j in xrange(len(result[i])):
             sheet.write(i,j,result[i][j])
-    wbk.save(str(today_date)+'.xls')
+    wbk.save(str(today_date)+'.xlsx')
 
 if __name__ == "__main__":
 
