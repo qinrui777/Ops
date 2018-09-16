@@ -4,7 +4,7 @@ package main
 import "fmt"
 
 
-常用用来作枚举
+//常用用来作枚举
 const (
 	Female = 0
 	Male = 1
