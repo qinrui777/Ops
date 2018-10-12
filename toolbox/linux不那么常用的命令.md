@@ -174,3 +174,47 @@ abc
 [root@node1 tmp]# echo "aaabbcc" | tr '[a-z]' '[A-Z]'
 AAABBCC
 ```
+
+
+### iconv
+将文件内容字符集转成其他字符集
+
+
+
+### logger
+功能：系统日志的shell命令行接口
+常用选项：
+-i  每行记录进程ID
+-f  指定输出日志到文件
+-p  设置记录的优先级
+-t  添加标签
+```sh
+logger -i -t "my-test-tag" -p local3.notice "message from logger command"
+cat /var/log/messages | grep test
+```
+
+### netstat 
+功能：打印网络连接、路由表、接口统计信息、伪装连接和多播成员 
+常用选项： 
+-r 显示路由表 
+-i 显示接口表 
+-n 不解析名字 
+-p 显示程序名 PID/Program 
+-l 显示监听的socket 
+-a 显示所有socket 
+-o 显示计时器 
+-Z 显示上下文 
+-t 只显示tcp连接 
+-u 只显示udp连接 
+-s 显示每个协议统计信息
+
+
+### ss
+功能：比netstat更强大的socket查看工具
+
+```sh
+显示所有建立的连接：
+# ss -o state established
+显示所有的TIME-WAIT状态：
+# ss -o state TIME-WAIT
+```
