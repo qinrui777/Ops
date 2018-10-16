@@ -7,7 +7,7 @@ playbook会越来越长，难维护
 将一个或多个task抽象成一个role，隐藏细节，供playbook调用   
 role易于复用，可以从一个已知的文件结构中自动加载vars, tasks, handler。
 部分文件结构：
-
+```sh
 roles/
     install/
         files/
@@ -23,7 +23,7 @@ roles/
             main.yml
         handlers/
         vars/
-
+```
 ```
 ---
 - hosts: webservers
@@ -34,7 +34,7 @@ roles/
 
 ###  建议的结构
 参考 https://blog.goquxiao.com/posts/2015/09/01/ansible-simple-tutorial/
-
+```sh
 ├── inventory                        # 存放主机/分组配置  
 │   └── production   
 └── playbooks                          # 第一层存放不同的剧本  
@@ -69,3 +69,4 @@ roles/
             │       └── conf 
             │           └── conf.ini 
             └── vars 
+```
