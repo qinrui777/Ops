@@ -2,7 +2,7 @@ import  ldap
 
 try:
   l = ldap.open("172.20.xx.xx",xxx)
-  l.simple_bind_s("CN=azure_s_itisrvacc,OU=User,OU=DevOps,OU=Project,DC=cn133,DC=azure,DC=net","""password""")
+  l.simple_bind_s("CN=azure_s_itisrvaccxxxx,OU=User,OU=DevOps,OU=Project,DC=cn1xx,DC=azure,DC=net","""password""")
 except ldap.LDAPError,e:
   print "error when open ldap"
   print e
@@ -11,7 +11,7 @@ except ldap.LDAPError,e:
 baseDN = "OU=Service,OU=Group,OU=DevOps,OU=Project,DC=cn133,DC=azure,DC=net"
 searchScope = ldap.SCOPE_SUBTREE
 retrieveAttributes = None
-#searchFilter = "(&(memberOf=CN=DevOps_Grafana,OU=Service,OU=Group,OU=DevOps,OU=Project,DC=cn133,DC=azure,DC=net)(objectClass=person)(sAMAccountName=%s))"
+#searchFilter = "(&(memberOf=CN=DevOps_Grafana,OU=Service,OU=Group,OU=DevOps,OU=Project,DC=cn1xxx,DC=azure,DC=net)(objectClass=person)(sAMAccountName=%s))"
 searchFilter = "CN=DevOps_Grafana"
 try:
         ldap_result_id = l.search(baseDN, searchScope, searchFilter, retrieveAttributes)
