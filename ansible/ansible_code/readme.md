@@ -7,6 +7,16 @@
 
 `vagrant up`
 
+
+安装基础命令
+`yum install -y vim git net-tools`
+
+
+安装ansible（ node1上即可）
+`yum install -y ansible`
+
+
+
 ```bash
 ➜  vagrant-cluster vagrant ssh node1
 Last login: Thu Oct 25 02:00:16 2018 from 10.0.2.2
