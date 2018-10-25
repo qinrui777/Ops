@@ -6,3 +6,11 @@
 |   node2  | 192.168.59.2 | 被管理机| 
 
 `vagrant up`
+
+```bash
+➜  vagrant-cluster vagrant ssh node1
+Last login: Thu Oct 25 02:00:16 2018 from 10.0.2.2
+[vagrant@node1 ~]$ sudo su -
+Last login: 四 10月 25 02:00:19 UTC 2018 on pts/0
+yum install -y ansible`
+```
