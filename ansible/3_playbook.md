@@ -115,6 +115,11 @@ root@node1:/home/vagrant/ansible_demo/pb# cat install_apache.yml
     service: name=apache2 state=stopped
  ```
  
+ 
+ 指定 inventorys组
+ 
+ `ansible -i inventorys/devops devops4 -m ping`
+ 
  >  安装apache2后，会默认启动服务，所以此处 安装后触发停止apache2的服务的过程
  
 > 提供json和yml互转的在线网站： http://www.json2yaml.com/
