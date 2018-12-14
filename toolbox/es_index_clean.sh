@@ -1,18 +1,17 @@
 #!/bin/bash
 
 date=`date "+%Y.%m.%d" --date="-1 month"`
-echo ${date}
+
+#echo ${date}
+#date "+%Y.%m.%d" --date="-10 day"
 
 #svc=(nginx-int nginx-development nginx-preprod )
 
 svcArray=(nginx-int
 nginx-development
-int03-integration-order
-int02-coupon
-int03-coupon
 )
 
-echo ${#svcArray[@]}
+#echo ${#svcArray[@]}
 
 for i in ${svcArray[@]};do
 
