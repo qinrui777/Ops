@@ -1,5 +1,8 @@
 ### postgres 的数据库备份
 
+
+每天备份一次，备份的产出物sql文件格式为 `SERVICENAME_DATA.sql`
+
 #### 脚本如下
 
 ```bash
